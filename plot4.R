@@ -18,8 +18,8 @@ pow$Sub_metering_1 <- as.numeric(pow$Sub_metering_1)
 pow$Sub_metering_2 <- as.numeric(pow$Sub_metering_2)
 pow$Sub_metering_3 <- as.numeric(pow$Sub_metering_3)
 
-# Display first the plot on screen, and save to file
 # 2 rows, 2 columns for rows
+png(filename = 'plot4.png')
 par(mfrow=c(2,2))
 
 # plot1
@@ -38,5 +38,4 @@ legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"
 plot(pow$Date, pow$Global_reactive_power, ylab="Global_reactive_power", xlab = "datetime", type = "l")
 
 # Save to file
-dev.copy(png,'plot4.png')
 dev.off()

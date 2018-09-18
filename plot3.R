@@ -18,7 +18,11 @@ pow$Sub_metering_1 <- as.numeric(pow$Sub_metering_1)
 pow$Sub_metering_2 <- as.numeric(pow$Sub_metering_2)
 pow$Sub_metering_3 <- as.numeric(pow$Sub_metering_3)
 
-# Display first the plot on screen, and then save to file
-plot(pow$Date, pow$Global_active_power, ylab="Global Active Power(kilowatts)", xlab = "", type = "l")
-dev.copy(png,'plot3.png')
+# Create png file
+par(mfrow=c(1,1))
+png(filename = 'plot3.png')
+plot(pow$Date, pow$Sub_metering_1, ylab="Energy sub metering", xlab = "", type = "l")
+lines(pow$Date, pow$Sub_metering_2, col="red")
+lines(pow$Date, pow$Sub_metering_3, col="blue")
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black", "red", "blue"), lty = 1)
 dev.off()
