@@ -19,7 +19,7 @@ pow$Sub_metering_2 <- as.numeric(pow$Sub_metering_2)
 pow$Sub_metering_3 <- as.numeric(pow$Sub_metering_3)
 
 # Create png file
+png(filename = 'plot1.png', width = 480, height = 480, units='px')
 par(mfrow=c(1,1))
-png(filename = 'plot1.png', width = 960, height = 960, units='px')
 hist(pow$Global_active_power, xlab="Global Active Power (kilowatts)", main = "Global Active Power", col = "Red")
 dev.off()

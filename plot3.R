@@ -19,10 +19,10 @@ pow$Sub_metering_2 <- as.numeric(pow$Sub_metering_2)
 pow$Sub_metering_3 <- as.numeric(pow$Sub_metering_3)
 
 # Create png file
-png(filename = 'plot3.png', width = 960, height = 960, units='px')
+png(filename = 'plot3.png', width = 480, height = 480, units='px')
 par(mfrow=c(1,1))
 plot(pow$Date, pow$Sub_metering_1, ylab="Energy sub metering", xlab = "", type = "l")
 lines(pow$Date, pow$Sub_metering_2, col="red")
 lines(pow$Date, pow$Sub_metering_3, col="blue")
-legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black", "red", "blue"), lty = 1)
+legend(x="topright",y=5, legend=c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),bty="n", lty=c(1,1,1), col=c("black","red","blue"))
 dev.off()
