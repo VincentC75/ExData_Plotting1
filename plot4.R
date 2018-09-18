@@ -19,7 +19,7 @@ pow$Sub_metering_2 <- as.numeric(pow$Sub_metering_2)
 pow$Sub_metering_3 <- as.numeric(pow$Sub_metering_3)
 
 # 2 rows, 2 columns for rows
-png(filename = 'plot4.png')
+png(filename = 'plot4.png', width = 960, height = 960, units='px')
 par(mfrow=c(2,2))
 
 # plot1
