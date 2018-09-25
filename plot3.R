@@ -1,5 +1,13 @@
 # Plot3.R
 
+## Download file only if the ZIP doesn't exist
+zipURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+localFile <- "household_power_consumption.zip"
+if(!file.exists(localFile)) {
+  download.file(zipURL, destfile=localFile, method="auto")
+  unzip (localFile)
+}
+
 # Load the data
 power <- read.csv2('household_power_consumption.txt', stringsAsFactors = FALSE)
 
@@ -24,5 +32,5 @@ par(mfrow=c(1,1))
 plot(pow$Date, pow$Sub_metering_1, ylab="Energy sub metering", xlab = "", type = "l")
 lines(pow$Date, pow$Sub_metering_2, col="red")
 lines(pow$Date, pow$Sub_metering_3, col="blue")
-legend(x="topright",y=5, legend=c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),bty="n", lty=c(1,1,1), col=c("black","red","blue"))
+legend(x="topright",y=5, legend=c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), col=c("black","red","blue"))
 dev.off()

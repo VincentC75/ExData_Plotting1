@@ -1,5 +1,13 @@
 # Plot2.R
 
+## Download file only if the ZIP doesn't exist
+zipURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+localFile <- "household_power_consumption.zip"
+if(!file.exists(localFile)) {
+  download.file(zipURL, destfile=localFile, method="auto")
+  unzip (localFile)
+}
+
 # Load the data
 power <- read.csv2('household_power_consumption.txt', stringsAsFactors = FALSE)
 
